@@ -72,7 +72,7 @@ const Header = () => {
             />
             {visible && (
               <p id="slide" className="text-[#FFFFFF] slide text-[40px] leading-[48px] font-[800]">
-                I'm Tolulope
+                I&apos;m Tolulope
               </p>
             )}
           </div>

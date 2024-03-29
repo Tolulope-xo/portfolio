@@ -4,7 +4,9 @@ import React, { useState, useRef } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const Contact = () => {
+const Contact = ({}) => {
+
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",

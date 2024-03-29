@@ -17,7 +17,7 @@ const Footer = () => {
               alt="display-picture"
             />
             <p className="text-[#FFFFFF] text-[30px] md:text-[50px] leading-[72px] font-[900]">
-              Let’s build it together.
+              Let&apos;s build it together.
             </p>
           </div>
           </div>
