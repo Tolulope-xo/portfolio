@@ -6,16 +6,41 @@ import Project from "./Project";
 import abel from '../../../public/assets/abel.png'
 import skyle from '../../../public/assets/skyle.png'
 import jaga from '../../../public/assets/jaga.png'
+import planet from '../../../public/assets/planet.png'
+import immibuddy from '../../../public/assets/immibuddy.png'
+import alvany from '../../../public/assets/alvany.png'
 const Portfolio = () => { 
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   const projects = [
+    {
+      title: "Immibuddy",
+      post: 'Website Development',
+      src: immibuddy,
+      color: "#000000",
+      lin: 'https://immibuddy.com/'
+    },
     {
       title: "Skyle Design",
       post: 'Website Development',
       src: skyle,
       color: "#000000",
       lin: 'https://designwithskyle.com/'
+    },
+    {
+      title: "Alvany Energy Limited",
+      post: 'Website Development',
+      src: alvany,
+      color: "#706D63",
+      lin: 'https://alvanyenergy.org/'
+
+    }, {
+      title: "Planet Savers",
+      post: 'Website Development',
+      src: planet,
+      color: "#706D63",
+      lin: 'https://planetsaversglobal.com/'
+
     },
     {
       title: "Jaga Visuals",
@@ -33,14 +58,7 @@ const Portfolio = () => {
       lin: 'https://chic-taiyaki-c8c3c3.netlify.app/'
 
     },
-    {
-      title: "Artsy",
-      post: 'Website Development',
-      src: abel,
-      color: "#706D63",
-      lin: 'https://chic-taiyaki-c8c3c3.netlify.app/'
-
-    },
+   
   ];
 
   return (
