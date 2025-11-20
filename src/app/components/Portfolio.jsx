@@ -9,6 +9,7 @@ import jaga from '../../../public/assets/jaga.png'
 import planet from '../../../public/assets/planet.png'
 import immibuddy from '../../../public/assets/immibuddy.png'
 import alvany from '../../../public/assets/alvany.png'
+import sonani from "../../../public/assets/sonani.png"
 const Portfolio = () => { 
   const [modal, setModal] = useState({ active: false, index: 0 });
 
@@ -32,7 +33,7 @@ const Portfolio = () => {
       post: 'Website Development',
       src: alvany,
       color: "#706D63",
-      lin: 'https://alvanyenergy.org/'
+      lin: 'https://starlit-fenglisu-2a5111.netlify.app/'
 
     }, {
       title: "Planet Savers",
@@ -47,7 +48,7 @@ const Portfolio = () => {
       post: 'Website Development',
       src: jaga,
       color: "#8C8C8C",
-      lin: 'https://jagavisuals.com/'
+      lin: 'https://jaga-visuals.netlify-app'
 
     },
     {
@@ -56,6 +57,14 @@ const Portfolio = () => {
       src: abel,
       color: "#EFE8D3",
       lin: 'https://chic-taiyaki-c8c3c3.netlify.app/'
+
+    },
+    {
+      title: "Sonani Consulting",
+      post: 'Website Development',
+      src: sonani,
+      color: "#EFE8D3",
+      lin: 'https://sonani.netlify.app/'
 
     },
    

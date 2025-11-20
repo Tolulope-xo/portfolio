@@ -13,6 +13,7 @@ const Contact = ({}) => {
     phone: "",
     message: "",
   });
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +25,8 @@ const Contact = ({}) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Form Data:", formData);
+
+    setIsLoading(true);
 
     fetch("https://formsubmit.co/ajax/olatunjitolulope4@gmail.com", {
       method: "POST",
@@ -55,6 +58,9 @@ const Contact = ({}) => {
         console.error("Error during form submission:", error);
         // Display error toast notification
         toast.error("Failed to submit form. Please try again later.");
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   };
   return (
@@ -110,11 +116,12 @@ const Contact = ({}) => {
               className="bg-transparent border-b outline-none border-b-[#FFFFFF] text-[#FFFFFF] h-[199px] text-[18px] leading-[37.8px] font-[600] max-w-[100%] w-[100%] md:w-[624px]"
             />
           </div>
-          <div className="bg-[#F4F7FA] mt-[25px]  flex flex-row justify-self-end cursor-pointer border rounded-r-[48px] rounded-l-[48px] justify-items-end items-center justify-center content-end w-[190px] h-[70px]">
+          <div className={`bg-[#F4F7FA] mt-[25px] flex flex-row justify-self-end border rounded-r-[48px] rounded-l-[48px] justify-items-end items-center justify-center content-end w-[190px] h-[70px] ${isLoading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}>
             <input
               type="submit"
-              className="text-[#0B0C0E] text-[18px] leading-[22px] font-[800]"
-              defaultValue="Submit"
+              disabled={isLoading}
+              className="text-[#0B0C0E] text-[18px] leading-[22px] font-[800] cursor-pointer disabled:cursor-not-allowed"
+              value={isLoading ? "Submitting..." : "Submit"}
             />
           </div>
 
