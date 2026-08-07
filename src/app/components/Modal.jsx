@@ -28,6 +28,12 @@ const Modal = ({ modal, projects }) => {
   const cursorLabel = useRef(null);
 
   useEffect(() => {
+    // Only wire up the hover-follow effect for mouse-driven devices, and skip
+    // it entirely when the user prefers reduced motion.
+    const finePointer = window.matchMedia("(pointer: fine)").matches;
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (!finePointer || reduceMotion) return;
+
     //Move Container
 
     let xMoveContainer = gsap.quickTo(modalContainer.current, "left", {
@@ -64,24 +70,20 @@ const Modal = ({ modal, projects }) => {
       ease: "power3",
     });
 
-    window.addEventListener("mousemove", (e) => {
+    const onMouseMove = (e) => {
       const { pageX, pageY } = e;
-
       xMoveContainer(pageX);
-
       yMoveContainer(pageY);
-
       xMoveCursor(pageX);
-
       yMoveCursor(pageY);
-
       xMoveCursorLabel(pageX);
-
       yMoveCursorLabel(pageY);
-    });
+    };
+    window.addEventListener("mousemove", onMouseMove);
+    return () => window.removeEventListener("mousemove", onMouseMove);
   }, []);
   return (
-    <>
+    <div aria-hidden="true">
       <motion.div
         ref={modalContainer}
         variants={scaleAnimation}
@@ -112,7 +114,7 @@ const Modal = ({ modal, projects }) => {
           }}
         >
           {projects.map((project, index) => {
-            const { src, color, lin } = project;
+            const { src, color, lin, title } = project;
             return (
               <div
                 key={`modal_${index}`}
@@ -125,8 +127,8 @@ const Modal = ({ modal, projects }) => {
                   backgroundColor: color,
                 }}
               >
-                <a href={lin}>
-                  <Image src={src} width={300} height={0} alt="image" />
+                <a href={lin} target="_blank" rel="noopener noreferrer" tabIndex={-1}>
+                  <Image src={src} width={300} height={0} alt={`Screenshot of the ${title} website`} />
                 </a>
               </div>
             );
@@ -134,6 +136,7 @@ const Modal = ({ modal, projects }) => {
         </div>
       </motion.div>
       <motion.div
+        ref={cursor}
         className="cursor"
         variants={scaleAnimation}
         initial="initial"
@@ -156,6 +159,7 @@ const Modal = ({ modal, projects }) => {
       ></motion.div>
 
       <motion.div
+        ref={cursorLabel}
         className="cursorLabel"
         variants={scaleAnimation}
         initial="initial"
@@ -178,7 +182,7 @@ const Modal = ({ modal, projects }) => {
       >
         View
       </motion.div>
-    </>
+    </div>
   );
 };
 

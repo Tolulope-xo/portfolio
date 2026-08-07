@@ -1,0 +1,34 @@
+# Tolulope Olatunji — Full-Stack Developer & Digital Transformation Consultant
+
+> Personal portfolio of Tolulope Olatunji, a full-stack developer (React, Next.js, NestJS, TypeScript, AWS) and digital transformation consultant with 4+ years of professional experience. Currently deputy technical authority on a national government regulatory platform serving 58,000+ registered professionals, shipping payment-critical backend logic, gated CI/CD releases, and live production incident response.
+
+## Skills
+
+- Frontend: React.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, Redux
+- Backend: Node.js, NestJS, MongoDB (Mongoose), REST, GraphQL, WebSockets
+- Cloud & DevOps: AWS (Elastic Beanstalk, ECS/Fargate, CloudFront, S3), GitHub Actions CI/CD, release management
+- Quality & Safety: regression testing, fail-closed design, incident response, data-protection compliance (NDPA 2023)
+- AI Engineering: AI-augmented development with Claude Code — agentic workflows and AI code review wired into CI
+
+## Services
+
+- Full-stack web application development (React/Next.js + Node/NestJS)
+- Digital transformation for organisations moving critical workflows online
+- Payment integration and transaction-integrity engineering
+- Cloud deployment, CI/CD pipelines and release management on AWS
+- Production operations: monitoring, incident response and data remediation
+
+## Selected Projects
+
+- [EMGS Global](https://www.emgs.global/): Website development
+- [Immibuddy](https://immibuddy.com/): Website development
+- [Skyle Design](https://designwithskyle.com/): Website development
+- [Planet Savers](https://planetsaversglobal.com/): Website development
+- [Jaga Visuals](https://jaga-visuals.netlify.app/): Website development
+- [Sonani Consulting](https://sonani.netlify.app/): Website development
+
+## Links
+
+- [GitHub](https://www.github.com/Tolulope-xo)
+- [LinkedIn](https://www.linkedin.com/in/Tolulope-olatunji)
+- [Twitter/X](https://www.twitter.com/Ayo__tomiwa)
