@@ -2,7 +2,7 @@
 // shared by metadata, robots.txt, sitemap.xml and JSON-LD.
 // Set NEXT_PUBLIC_SITE_URL in the deployment environment to override.
 export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://tolulope-olatunji.vercel.app";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://thetolulope.vercel.app";
 
 export const SITE_NAME = "Tolulope Olatunji — Portfolio";
 
