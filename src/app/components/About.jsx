@@ -4,20 +4,20 @@ import React from "react";
 const About = () => {
 
     return (
-    <div id='about' className="flex w-[100%] max-w-[100%] flex-col md:flex-row  justify-between items-start my-[5rem] px-[20px] lg:px-[80px]">
-      <h2 className="text-[#0B0C0E] w-[100%] max-w-[40%] text-[40px] leading-[48px] font-[900]">
+    <section id='about' aria-label="About" className="flex w-[100%] max-w-[100%] flex-col md:flex-row  justify-between items-start my-[5rem] px-[20px] lg:px-[80px]">
+      <h2 className="font-display text-[#0B0C0E] w-[100%] max-w-[40%] text-[40px] leading-[48px] font-[700]">
         About
       </h2>
       <div className="flex flex-col">
-      <p className="text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] pb-8 font-[600]">
+      <p className="text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] pb-8 font-[500]">
        Full-Stack Developer &amp; Digital Transformation Consultant | React • Next.js • NestJS • AWS
        </p>
-      <p className="text-[#3C3D3E] w-[100%]max-w-full text-[18px] md:text-[27px] leading-[37.8px] pb-4 font-[600]">
+      <p className="text-[#3C3D3E] w-[100%]max-w-full text-[18px] md:text-[27px] leading-[37.8px] pb-4 font-[400]">
 
 With 4+ years of professional experience, I build and operate production web platforms end-to-end — from React and Next.js frontends to NestJS and MongoDB backends running on AWS. I currently serve as deputy technical authority on a national government regulatory platform used by over 58,000 registered professionals, where I ship payment-critical backend logic, cut production releases through a gated CI/CD pipeline, and run live incident response and data remediation on a real production system.
 </p>
 
-<div className="text-[#3C3D3E] w-[100%] max-w-full pb-8 text-[18px] md:text-[27px] leading-[37.8px] font-[600]">
+<div className="text-[#3C3D3E] w-[100%] max-w-full pb-8 text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
   <ul>
 
 <li>💼 Technologies &amp; Skills</li>
@@ -29,7 +29,7 @@ With 4+ years of professional experience, I build and operate production web pla
 </ul>
 </div>
 
-<div className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[600]">
+<div className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
 ✅ What I Offer
 <ul>
 <li>- Full-stack web application development (React/Next.js + Node/NestJS)</li>
@@ -41,7 +41,7 @@ With 4+ years of professional experience, I build and operate production web pla
 </ul>
 </div>
 
-<div className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[600]">
+<div className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
 💬 Why Work With Me?
 <ul>
 <li>- Trusted with deputy production authority on a live national government platform</li>
@@ -51,16 +51,16 @@ With 4+ years of professional experience, I build and operate production web pla
 </ul>
 </div>
 
-<p className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[600]">
+<p className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
 ⭐ Let&apos;s Connect:
 Whether it&apos;s a product to build, a platform to modernise, or a team that needs senior full-stack delivery — I&apos;m open to both short-term and long-term engagements.
 </p>
-<p className="text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[600]">
+<p className="text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
 
 Full-Stack Developer | React Developer | Next.js Developer | NestJS Developer | TypeScript Developer | AWS | Digital Transformation Consultant
       </p>
       </div>
-    </div>
+    </section>
   );
 };
 

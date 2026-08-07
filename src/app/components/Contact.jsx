@@ -67,10 +67,12 @@ const Contact = ({}) => {
         <form onSubmit={handleSubmit}>
           <div className="">
             <div className="mb-[12px]">
+              <label htmlFor="name" className="sr-only">Name</label>
               <input
                 type="text"
                 id="name"
                 name="name"
+                autoComplete="name"
                 className="bg-transparent border-b outline-none max-w-[100%] w-full border-b-[#FFFFFF] text-[#FFFFFF] h-[91px] text-[18px] leading-[37.8px] font-[600]  md:w-[624px]"
                 required
                 placeholder="Name"
@@ -81,29 +83,35 @@ const Contact = ({}) => {
           </div>
           <div className="my-[12px]">
             <div>
+              <label htmlFor="email" className="sr-only">Email</label>
               <input
                 value={formData.email}
                 onChange={handleInputChange}
                 type="email"
                 id="email"
                 name="email"
+                required
+                autoComplete="email"
                 placeholder="Email"
                 className="bg-transparent border-b outline-none max-w-[100%] w-full  border-b-[#FFFFFF] text-[#FFFFFF] h-[91px] text-[18px] leading-[37.8px] font-[600]  md:w-[624px]"
               />
             </div>
             <div className="my-[12px]">
+              <label htmlFor="phone" className="sr-only">Phone number</label>
               <input
                 value={formData.phone}
                 onChange={handleInputChange}
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="Phone number"
+                autoComplete="tel"
+                placeholder="Phone number (optional)"
                 className="bg-transparent border-b outline-none border-b-[#FFFFFF] text-[#FFFFFF] h-[91px] text-[18px] leading-[37.8px] font-[600] max-w-[100%] w-[100%] md:w-[624px]"
               />
             </div>
           </div>
           <div className="my-[12px]">
+            <label htmlFor="message" className="sr-only">Message</label>
             <textarea
               value={formData.message}
               onChange={handleInputChange}
@@ -114,14 +122,14 @@ const Contact = ({}) => {
               className="bg-transparent border-b outline-none border-b-[#FFFFFF] text-[#FFFFFF] h-[199px] text-[18px] leading-[37.8px] font-[600] max-w-[100%] w-[100%] md:w-[624px]"
             />
           </div>
-          <div className={`bg-[#F4F7FA] mt-[25px] flex flex-row justify-self-end border rounded-r-[48px] rounded-l-[48px] justify-items-end items-center justify-center content-end w-[190px] h-[70px] ${isLoading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}>
-            <input
-              type="submit"
-              disabled={isLoading}
-              className="text-[#0B0C0E] text-[18px] leading-[22px] font-[800] cursor-pointer disabled:cursor-not-allowed"
-              value={isLoading ? "Submitting..." : "Submit"}
-            />
-          </div>
+          <button
+            type="submit"
+            disabled={isLoading}
+            aria-busy={isLoading}
+            className={`bg-[#F4F7FA] mt-[25px] flex flex-row border rounded-full items-center justify-center w-[190px] h-[70px] text-[#0B0C0E] text-[18px] leading-[22px] font-[700] hover:opacity-90 transition-opacity ${isLoading ? 'opacity-70 cursor-not-allowed' : 'cursor-pointer'}`}
+          >
+            {isLoading ? "Submitting..." : "Submit"}
+          </button>
 
           <ToastContainer
             position="top-right"

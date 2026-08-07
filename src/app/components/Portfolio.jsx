@@ -3,14 +3,14 @@ import React from "react";
 import { useState } from "react";
 import Modal from "./Modal";
 import Project from "./Project";
-import abel from '../../../public/assets/abel.png'
-import skyle from '../../../public/assets/skyle.png'
-import jaga from '../../../public/assets/jaga.png'
-import planet from '../../../public/assets/planet.png'
-import immibuddy from '../../../public/assets/immibuddy.png'
-import alvany from '../../../public/assets/alvany.png'
-import sonani from "../../../public/assets/sonani.png"
-import emgs from "../../../public/assets/emgs.png"
+import abel from '../../../public/assets/abel.webp'
+import skyle from '../../../public/assets/skyle.webp'
+import jaga from '../../../public/assets/jaga.webp'
+import planet from '../../../public/assets/planet.webp'
+import immibuddy from '../../../public/assets/immibuddy.webp'
+import alvany from '../../../public/assets/alvany.webp'
+import sonani from "../../../public/assets/sonani.webp"
+import emgs from "../../../public/assets/emgs.webp"
 const Portfolio = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
@@ -79,12 +79,12 @@ const Portfolio = () => {
   ];
 
   return (
-    <div   id="portfolio" className="flex w-[100%]  max-w-[100%] flex-col md:flex-row justify-between items-start my-[10rem] px-[20px] lg:px-[80px]">
-      <h2 className="text-[#0B0C0E] w-[100%] mb-[1rem] md:0 max-w-full md:max-w-[40%] text-[40px] leading-[48px] font-[900]">
+    <section   id="portfolio" aria-label="Recent works" className="flex w-[100%]  max-w-[100%] flex-col md:flex-row justify-between items-start my-[10rem] px-[20px] lg:px-[80px]">
+      <h2 className="font-display text-[#0B0C0E] w-[100%] mb-[1rem] md:0 max-w-full md:max-w-[40%] text-[40px] leading-[48px] font-[700]">
         Recent Works
       </h2>
       <div className="w-[100%] max-w-[100%] md:max-w-[60%] ">
-        <main style={{
+        <div style={{
             display: 'flex',
            
             alignItems: 'center',
@@ -110,9 +110,9 @@ const Portfolio = () => {
             })}
           </div>
           <Modal modal={modal} projects={projects} />
-        </main>
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 

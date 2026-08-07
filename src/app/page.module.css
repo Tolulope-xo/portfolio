@@ -11,7 +11,10 @@
   
   .sliderContainer{
     position: absolute;
-    top: calc(100vh - 150px);
+    bottom: 16px;
+    left: 0;
+    right: 0;
+    overflow: hidden;
   }
 
   
@@ -21,16 +24,13 @@
     white-space: nowrap;
     display: flex;
     flex-direction: row;
-    bottom: 15rem;
-    align-items: center;
+    align-items: baseline;
+    width: max-content;
   }
   
   .slider p{
     position: relative;
     margin: 0px;
-    color: white;
-    font-size: 230px;
-    font-weight: 500;
     padding-right: 50px;
   }
   

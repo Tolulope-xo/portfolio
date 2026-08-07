@@ -1,20 +1,21 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import localFont from 'next/font/local'
+import { Inter, Space_Grotesk } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { SITE_URL, SITE_NAME, AUTHOR } from "./site";
- 
-// Font files can be colocated inside of `app`
-const myFont = localFont({
-  src: '../../public/fonts/NeueMontreal-Light.otf',
-  display: 'swap',
-})
 
- const bold = localFont({
-  src: '../../public/fonts/NeueMontreal-Bold.otf',
-  display: 'swap',
-})
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-inter",
+});
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-space-grotesk",
+});
 
 
 const description =
@@ -43,7 +44,6 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: `${AUTHOR.name} — ${AUTHOR.jobTitle}`,
     description,
-    images: [{ url: "/assets/display-removebg.png", alt: AUTHOR.name }],
   },
   twitter: {
     card: "summary_large_image",
@@ -51,7 +51,6 @@ export const metadata: Metadata = {
     creator: "@Ayo__tomiwa",
     title: `${AUTHOR.name} — ${AUTHOR.jobTitle}`,
     description,
-    images: ["/assets/display-removebg.png"],
   },
   robots: {
     index: true,
@@ -110,8 +109,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html className="bg-[#F4F7FA]" lang="en">
-       <body className={myFont.className}>
+    <html
+      className={`bg-[#F4F7FA] scroll-smooth ${inter.variable} ${spaceGrotesk.variable}`}
+      lang="en"
+    >
+       <body className="font-sans antialiased">
        <script
          type="application/ld+json"
          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
