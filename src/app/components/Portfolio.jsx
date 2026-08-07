@@ -10,10 +10,18 @@ import planet from '../../../public/assets/planet.png'
 import immibuddy from '../../../public/assets/immibuddy.png'
 import alvany from '../../../public/assets/alvany.png'
 import sonani from "../../../public/assets/sonani.png"
-const Portfolio = () => { 
+import emgs from "../../../public/assets/emgs.png"
+const Portfolio = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   const projects = [
+    {
+      title: "EMGS Global",
+      post: 'Website Development',
+      src: emgs,
+      color: "#0B0C0E",
+      lin: 'https://www.emgs.global/'
+    },
     {
       title: "Immibuddy",
       post: 'Website Development',
@@ -48,7 +56,7 @@ const Portfolio = () => {
       post: 'Website Development',
       src: jaga,
       color: "#8C8C8C",
-      lin: 'https://jaga-visuals.netlify-app'
+      lin: 'https://jaga-visuals.netlify.app/'
 
     },
     {

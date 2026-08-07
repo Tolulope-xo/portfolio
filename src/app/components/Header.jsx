@@ -82,13 +82,13 @@ const Header = () => {
                 ref={firstText}
                 className="text-[#F4F7FA] text-[80px] md:text-[180.38px] capitalize leading-[180.45px] font-[900] text-left"
               >
-                Front-end Developer -
+                Full-Stack Developer -
               </p>
               <p
                 ref={secondText}
                 className="text-[#F4F7FA] text-[80px] md:text-[180.38px] capitalize leading-[180.45px] font-[900] text-left"
               >
-                Freelance Developer -
+                Transformation Consultant -
               </p>
             </div>
           </div>

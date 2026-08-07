@@ -24,7 +24,6 @@ const Contact = ({}) => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form Data:", formData);
 
     setIsLoading(true);
 
@@ -42,8 +41,7 @@ const Contact = ({}) => {
         }
         return response.json();
       })
-      .then((data) => {
-        console.log("Response Data:", data);
+      .then(() => {
         // Display success toast notification
         toast.success("Form submitted successfully!");
         // Clear form data after successful submission
