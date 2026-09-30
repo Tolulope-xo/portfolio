@@ -11,10 +11,26 @@ import immibuddy from '../../../public/assets/immibuddy.webp'
 import alvany from '../../../public/assets/alvany.webp'
 import sonani from "../../../public/assets/sonani.webp"
 import emgs from "../../../public/assets/emgs.webp"
+import dixtoes from "../../../public/assets/dixtoes.webp"
+import workorganizer from "../../../public/assets/workorganizer.webp"
 const Portfolio = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   const projects = [
+    {
+      title: "Dix Toes",
+      post: 'E-commerce Development',
+      src: dixtoes,
+      color: "#1A1411",
+      lin: 'https://dixtoes.vercel.app/'
+    },
+    {
+      title: "Work Organiser",
+      post: 'Full-Stack Web App',
+      src: workorganizer,
+      color: "#EEF1F4",
+      lin: 'https://work-organizer-beryl.vercel.app/'
+    },
     {
       title: "EMGS Global",
       post: 'Website Development',
