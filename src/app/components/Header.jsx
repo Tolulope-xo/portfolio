@@ -72,10 +72,9 @@ const Header = () => {
           </h1>
           <p className="text-[#3C3D3E] text-[18px] md:text-[22px] leading-[1.6] font-[400] mt-6 max-w-[640px]">
             I&apos;m a web developer and digital transformation consultant
-            based in Nigeria, working with teams across Africa. I build and
-            operate production platforms end-to-end — React and Next.js
-            frontends, NestJS backends, and AWS infrastructure trusted by
-            58,000+ users.
+            based in Nigeria, working with businesses across Africa and
+            around the world. I build websites and web apps people can depend
+            on, including a platform used by 58,000+ people.
           </p>
           <div className="flex flex-row gap-4 mt-10">
             <a

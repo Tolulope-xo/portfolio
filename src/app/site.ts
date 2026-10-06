@@ -20,12 +20,13 @@ export const AUTHOR = {
     "Digital Transformation Consultant",
   ],
   description:
-    "Tolulope Olatunji is a software engineer, full-stack web developer and digital consultant in Nigeria, building React and Next.js platforms used by 58,000+ people.",
+    "Tolulope Olatunji is a software engineer, web developer and digital consultant in Nigeria who builds websites and web apps that help businesses grow.",
   // Where Tolulope is based, and the wider market served.
   country: { name: "Nigeria", code: "NG" },
   areaServed: [
     { "@type": "Country", name: "Nigeria" },
     { "@type": "Continent", name: "Africa" },
+    "Worldwide",
   ],
   sameAs: [
     "https://www.linkedin.com/in/Tolulope-olatunji",

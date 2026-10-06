@@ -1,6 +1,9 @@
 'use client'
 
 import React from "react";
+
+const text = "text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]";
+
 const About = () => {
 
     return (
@@ -10,53 +13,42 @@ const About = () => {
       </h2>
       <div className="flex flex-col">
       <p className="text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] pb-8 font-[500]">
-       Software Engineer, Full-Stack Web Developer &amp; Digital Transformation Consultant | React • Next.js • NestJS • AWS
-       </p>
-      <p className="text-[#3C3D3E] w-[100%]max-w-full text-[18px] md:text-[27px] leading-[37.8px] pb-4 font-[400]">
+        I build websites and web apps that help businesses win customers, get paid online and run smoothly.
+      </p>
+      <p className={`${text} pb-8`}>
+        I&apos;m Tolulope Olatunji, a software engineer and web developer based in Nigeria. For over 4 years I&apos;ve built websites and software for businesses and organisations. Today I help run a national government platform that more than 58,000 professionals use to register and pay online, so I know what it takes to build something people can depend on every day.
+      </p>
 
-I&apos;m Tolulope Olatunji, a software engineer and full-stack web developer based in Nigeria. With 4+ years of professional experience, I build and operate production web platforms end-to-end — from React and Next.js frontends to NestJS and MongoDB backends running on AWS. I currently serve as deputy technical authority on a national government regulatory platform used by over 58,000 registered professionals, where I ship payment-critical backend logic, cut production releases through a gated CI/CD pipeline, and run live incident response and data remediation on a real production system.
-</p>
+      <div className={`${text} pb-8`}>
+        <h3 className="font-[600]"><span aria-hidden="true">✅</span> What I Can Do For You</h3>
+        <ul>
+          <li>- Build a website that looks professional and brings you customers</li>
+          <li>- Build an online store so you can sell and get paid online</li>
+          <li>- Turn paperwork and manual processes into simple software your team can use</li>
+          <li>- Add online payments that you and your customers can trust</li>
+          <li>- Fix, speed up or take over a website or app that isn&apos;t working well</li>
+          <li>- Keep everything running after launch, so you&apos;re never left stranded</li>
+        </ul>
+      </div>
 
-<div className="text-[#3C3D3E] w-[100%] max-w-full pb-8 text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
-<h3 className="font-[600]"><span aria-hidden="true">💼</span> Technologies &amp; Skills</h3>
-  <ul>
-<li>🔹 Frontend: React.js, Next.js, JavaScript (ES6+), TypeScript, Tailwind CSS, Redux</li>
-<li>🔹 Backend: Node.js, NestJS, MongoDB (Mongoose), REST, GraphQL, WebSockets</li>
-<li>🔹 Cloud &amp; DevOps: AWS (Elastic Beanstalk, ECS/Fargate, CloudFront, S3), GitHub Actions CI/CD, release management</li>
-<li>🔹 Quality &amp; Safety: regression testing, fail-closed design, incident response, data-protection compliance (NDPA 2023)</li>
-<li>🔹 AI Engineering: AI-augmented development with Claude Code — agentic workflows and AI code review wired into CI</li>
-</ul>
-</div>
+      <div className={`${text} pb-8`}>
+        <h3 className="font-[600]"><span aria-hidden="true">💬</span> Why Clients Work With Me</h3>
+        <ul>
+          <li>- Trusted to help run a live government platform used by 58,000+ people</li>
+          <li>- Experienced with systems that handle real money, so I&apos;m careful with yours</li>
+          <li>- I test everything before it goes live and always have a backup plan</li>
+          <li>- I explain things in plain language, with no tech talk</li>
+          <li>- I use modern AI tools to deliver faster without cutting corners</li>
+        </ul>
+      </div>
 
-<div className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
-<h3 className="font-[600]"><span aria-hidden="true">✅</span> Web Development &amp; Digital Consulting Services</h3>
-<ul>
-<li>- Full-stack web application development (React/Next.js + Node/NestJS)</li>
-<li>- Digital transformation for organisations moving critical workflows online</li>
-<li>- Payment integration and transaction-integrity engineering</li>
-<li>- Cloud deployment, CI/CD pipelines and release management on AWS</li>
-<li>- Production operations: monitoring, incident response and data remediation</li>
-<li>- AI-augmented delivery — faster shipping without sacrificing review quality</li>
-</ul>
-</div>
+      <div className={`${text} pb-8`}>
+        <h3 className="font-[600]"><span aria-hidden="true">💼</span> Tools I Work With</h3>
+        <p>React, Next.js, TypeScript, Node.js, NestJS, MongoDB and AWS.</p>
+      </div>
 
-<div className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
-<h3 className="font-[600]"><span aria-hidden="true">💬</span> Why Work With Me?</h3>
-<ul>
-<li>- Trusted with deputy production authority on a live national government platform</li>
-<li>- Track record on systems where mistakes cost real money and real users</li>
-<li>- Evidence-first: fixes ship with tests, a rollback plan and live verification</li>
-<li>- Clear communication with technical teams and non-technical stakeholders alike</li>
-</ul>
-</div>
-
-<p className="text-[#3C3D3E] w-[100%] pb-8 max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
-⭐ Let&apos;s Connect:
-Whether it&apos;s a product to build, a platform to modernise, or a team that needs senior full-stack delivery — I&apos;m open to both short-term and long-term engagements.
-</p>
-<p className="text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]">
-
-Looking for a software engineer, a web developer for your next product, or a digital consultant to move a critical workflow online? I work with organisations in Nigeria and across Africa, on-site or remotely — use the contact form below.
+      <p className={text}>
+        Have a problem you want solved or an idea you want built? I work with businesses in Nigeria, across Africa and around the world, in person or remotely. Tell me about it using the form below.
       </p>
       </div>
     </section>
