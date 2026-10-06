@@ -18,38 +18,49 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 
-const description =
-  "Full-stack developer (React, Next.js, NestJS, AWS) and digital transformation consultant. Deputy technical authority on a national government regulatory platform serving 58,000+ users.";
+const description = AUTHOR.description;
+const title = `${AUTHOR.name} | Software Engineer & Web Developer, ${AUTHOR.country.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Tolulope Olatunji — Full-Stack Developer & Digital Transformation Consultant",
+  title,
   description,
+  applicationName: SITE_NAME,
   keywords: [
+    AUTHOR.name,
+    ...AUTHOR.alternateNames,
+    "Software Engineer",
+    "Web Developer",
     "Full-Stack Developer",
+    "Digital Consultant",
+    "Digital Transformation Consultant",
+    "Software Engineer in Nigeria",
+    "Web Developer in Nigeria",
+    "Web Developer in Africa",
     "React Developer",
     "Next.js Developer",
     "NestJS Developer",
     "TypeScript Developer",
-    "AWS",
-    "Digital Transformation Consultant",
-    "Tolulope Olatunji",
   ],
   authors: [{ name: AUTHOR.name, url: SITE_URL }],
   creator: AUTHOR.name,
+  publisher: AUTHOR.name,
   alternates: { canonical: "/" },
   openGraph: {
     type: "profile",
     url: SITE_URL,
     siteName: SITE_NAME,
-    title: `${AUTHOR.name} — ${AUTHOR.jobTitle}`,
+    title,
     description,
+    locale: "en_US",
+    firstName: AUTHOR.givenName,
+    lastName: AUTHOR.familyName,
   },
   twitter: {
     card: "summary_large_image",
     site: "@Ayo__tomiwa",
     creator: "@Ayo__tomiwa",
-    title: `${AUTHOR.name} — ${AUTHOR.jobTitle}`,
+    title,
     description,
   },
   robots: {
@@ -62,7 +73,29 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  other: {
+    "geo.region": AUTHOR.country.code,
+    "geo.placename": AUTHOR.country.name,
+  },
+  // Search Console / Bing Webmaster ownership tokens, set in the deployment
+  // environment. Omitted from the page when unset.
+  verification: {
+    google:
+      process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
+      "y8DOq6uO4uR4c9q-2vBSRY36zv9MTlz_MiDRc7LaUhU",
+    other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+      ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+      : undefined,
+  },
 };
+
+const services = [
+  "Full-stack web application development",
+  "Website development",
+  "Digital transformation consulting",
+  "Payment integration",
+  "Cloud deployment and CI/CD on AWS",
+];
 
 // Structured data so search engines and AI assistants (Google AI Overviews,
 // ChatGPT, Claude, Perplexity) can identify the person and site behind the page.
@@ -73,11 +106,33 @@ const jsonLd = {
       "@type": "Person",
       "@id": `${SITE_URL}/#person`,
       name: AUTHOR.name,
-      jobTitle: AUTHOR.jobTitle,
+      givenName: AUTHOR.givenName,
+      familyName: AUTHOR.familyName,
+      alternateName: AUTHOR.alternateNames,
+      description,
+      jobTitle: AUTHOR.roles,
       url: SITE_URL,
-      image: `${SITE_URL}/assets/display-removebg.png`,
+      image: `${SITE_URL}/opengraph-image`,
+      mainEntityOfPage: { "@id": `${SITE_URL}/#profilepage` },
+      address: {
+        "@type": "PostalAddress",
+        addressCountry: AUTHOR.country.code,
+      },
+      workLocation: { "@type": "Country", name: AUTHOR.country.name },
       sameAs: AUTHOR.sameAs,
+      hasOccupation: AUTHOR.roles.map((role) => ({
+        "@type": "Occupation",
+        name: role,
+      })),
+      makesOffer: services.map((service) => ({
+        "@type": "Offer",
+        itemOffered: { "@type": "Service", name: service },
+        areaServed: AUTHOR.areaServed,
+      })),
       knowsAbout: [
+        "Software engineering",
+        "Web development",
+        "Full-stack development",
         "React",
         "Next.js",
         "NestJS",
@@ -96,8 +151,20 @@ const jsonLd = {
       "@id": `${SITE_URL}/#website`,
       url: SITE_URL,
       name: SITE_NAME,
+      alternateName: `${AUTHOR.name} — Portfolio`,
       description,
       publisher: { "@id": `${SITE_URL}/#person` },
+      inLanguage: "en",
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${SITE_URL}/#profilepage`,
+      url: SITE_URL,
+      name: title,
+      description,
+      isPartOf: { "@id": `${SITE_URL}/#website` },
+      about: { "@id": `${SITE_URL}/#person` },
+      mainEntity: { "@id": `${SITE_URL}/#person` },
       inLanguage: "en",
     },
   ],

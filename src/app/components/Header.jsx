@@ -60,16 +60,22 @@ const Header = () => {
       <div className={`${styles.main} flex flex-col`}>
         <Nav />
         <div className="flex flex-1 flex-col justify-center px-[20px] pb-[120px] md:pb-[200px] lg:px-[80px]">
-          <p className="text-[#3C3D3E] text-[18px] md:text-[22px] font-[500] mb-4">
-            Hi, I&apos;m Tolulope Olatunji 👋
-          </p>
-          <h1 className="font-display text-[#0B0C0E] text-[44px] leading-[1.1] md:text-[76px] font-[700] max-w-[900px]">
-            Full-Stack Developer &amp; Digital Transformation Consultant
+          {/* The name and the role share one h1 so the page's main heading
+              answers both "Tolulope Olatunji" and role searches. */}
+          <h1 className="max-w-[900px]">
+            <span className="block font-sans text-[#3C3D3E] text-[18px] md:text-[22px] font-[500] mb-4">
+              Hi, I&apos;m Tolulope Olatunji <span aria-hidden="true">👋</span>
+            </span>
+            <span className="block font-display text-[#0B0C0E] text-[44px] leading-[1.1] md:text-[76px] font-[700]">
+              Software Engineer &amp; Full-Stack Web Developer
+            </span>
           </h1>
           <p className="text-[#3C3D3E] text-[18px] md:text-[22px] leading-[1.6] font-[400] mt-6 max-w-[640px]">
-            I build and operate production web platforms end-to-end — React and
-            Next.js frontends, NestJS backends, and AWS infrastructure trusted
-            by 58,000+ users.
+            I&apos;m a web developer and digital transformation consultant
+            based in Nigeria, working with teams across Africa. I build and
+            operate production platforms end-to-end — React and Next.js
+            frontends, NestJS backends, and AWS infrastructure trusted by
+            58,000+ users.
           </p>
           <div className="flex flex-row gap-4 mt-10">
             <a
@@ -92,13 +98,13 @@ const Header = () => {
               ref={firstText}
               className="font-display text-[#F4F7FA] text-[80px] md:text-[170px] capitalize leading-none font-[700] text-left"
             >
-              Full-Stack Developer -
+              Software Engineer -
             </p>
             <p
               ref={secondText}
               className="font-display text-[#F4F7FA] text-[80px] md:text-[170px] capitalize leading-none font-[700] text-left"
             >
-              Transformation Consultant -
+              Web Developer - Digital Consultant -
             </p>
           </div>
         </div>

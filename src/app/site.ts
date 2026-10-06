@@ -4,11 +4,29 @@
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://thetolulope.vercel.app";
 
-export const SITE_NAME = "Tolulope Olatunji — Portfolio";
+export const SITE_NAME = "Tolulope Olatunji";
 
 export const AUTHOR = {
   name: "Tolulope Olatunji",
-  jobTitle: "Full-Stack Developer & Digital Transformation Consultant",
+  givenName: "Tolulope",
+  familyName: "Olatunji",
+  // Other ways people search for the same person.
+  alternateNames: ["Olatunji Tolulope"],
+  jobTitle: "Software Engineer & Full-Stack Web Developer",
+  // The roles this site should be found for, in priority order.
+  roles: [
+    "Software Engineer",
+    "Full-Stack Web Developer",
+    "Digital Transformation Consultant",
+  ],
+  description:
+    "Tolulope Olatunji is a software engineer, full-stack web developer and digital consultant in Nigeria, building React and Next.js platforms used by 58,000+ people.",
+  // Where Tolulope is based, and the wider market served.
+  country: { name: "Nigeria", code: "NG" },
+  areaServed: [
+    { "@type": "Country", name: "Nigeria" },
+    { "@type": "Continent", name: "Africa" },
+  ],
   sameAs: [
     "https://www.linkedin.com/in/Tolulope-olatunji",
     "https://www.twitter.com/Ayo__tomiwa",
