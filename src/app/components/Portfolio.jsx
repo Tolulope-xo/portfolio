@@ -13,10 +13,18 @@ import sonani from "../../../public/assets/sonani.webp"
 import emgs from "../../../public/assets/emgs.webp"
 import dixtoes from "../../../public/assets/dixtoes.webp"
 import workorganizer from "../../../public/assets/workorganizer.webp"
+import thriftbid from "../../../public/assets/thriftbid.webp"
 const Portfolio = () => {
   const [modal, setModal] = useState({ active: false, index: 0 });
 
   const projects = [
+    {
+      title: "ThriftBid",
+      post: 'Live Auction Platform',
+      src: thriftbid,
+      color: "#F5F1EA",
+      lin: 'https://thrift-bidding-system-frontend.vercel.app/'
+    },
     {
       title: "Dix Toes",
       post: 'E-commerce Development',

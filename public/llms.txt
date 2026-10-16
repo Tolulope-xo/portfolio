@@ -24,6 +24,7 @@
 
 ## Selected Projects
 
+- [ThriftBid](https://thrift-bidding-system-frontend.vercel.app/): Live auction platform for pre-loved clothing, furniture, tech and books with real-time bidding
 - [Dix Toes](https://dixtoes.vercel.app/): E-commerce store for handmade leather footwear
 - [Work Organiser](https://work-organizer-beryl.vercel.app/): Full-stack app that turns WhatsApp requests into tasks filed with their documents
 - [EMGS Global](https://www.emgs.global/): Website development
