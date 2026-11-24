@@ -1,55 +1,67 @@
-'use client'
+import { LogoMark } from "./Logo";
 
-import React from "react";
-
-const text = "text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] font-[400]";
+const tools = ["React", "Next.js", "TypeScript", "Node.js", "NestJS", "MongoDB", "AWS", "Tailwind CSS"];
 
 const About = () => {
+  return (
+    <section
+      id="about"
+      aria-labelledby="about-heading"
+      className="px-[20px] lg:px-[80px] py-[96px] md:py-[128px]"
+    >
+      <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div>
+          <p className="text-[14px] font-[700] uppercase tracking-[0.14em] text-[#455CE9]">
+            About
+          </p>
+          <h2
+            id="about-heading"
+            className="mt-3 font-display text-[#0B0C0E] text-[36px] md:text-[52px] leading-[1.1] font-[700] tracking-[-0.02em]"
+          >
+            About Tolulope Olatunji
+          </h2>
+          <div className="mt-10 hidden lg:flex items-center gap-5 rounded-[24px] bg-[#0B0C0E] p-8">
+            <LogoMark tone="paper" className="h-14 w-auto" />
+            <p className="font-display text-[20px] leading-[1.35] text-[#F4F7FA]">
+              Software that people can depend on, every day.
+            </p>
+          </div>
+        </div>
 
-    return (
-    <section id='about' aria-label="About" className="flex w-[100%] max-w-[100%] flex-col md:flex-row  justify-between items-start my-[5rem] px-[20px] lg:px-[80px]">
-      <h2 className="font-display text-[#0B0C0E] w-[100%] max-w-[40%] text-[40px] leading-[48px] font-[700]">
-        About Tolulope Olatunji
-      </h2>
-      <div className="flex flex-col">
-      <p className="text-[#3C3D3E] w-[100%] max-w-full text-[18px] md:text-[27px] leading-[37.8px] pb-8 font-[500]">
-        I build websites and web apps that help businesses win customers, get paid online and run smoothly.
-      </p>
-      <p className={`${text} pb-8`}>
-        I&apos;m Tolulope Olatunji, a software engineer and web developer based in Nigeria. For over 4 years I&apos;ve built websites and software for businesses and organisations. Today I help run a national government platform that more than 58,000 professionals use to register and pay online, so I know what it takes to build something people can depend on every day.
-      </p>
+        <div className="text-[18px] md:text-[20px] leading-[1.7] text-[#3C3D3E]">
+          <p className="font-display text-[22px] md:text-[28px] leading-[1.4] font-[500] text-[#0B0C0E]">
+            I build websites and web apps that help businesses win customers,
+            get paid online and run smoothly.
+          </p>
+          <p className="mt-6">
+            I&apos;m a software engineer and web developer based in Nigeria.
+            For over 4 years I&apos;ve built websites and software for
+            businesses and organisations. Today I help run a national
+            government platform that more than 58,000 professionals use to
+            register and pay online, so I know what it takes to build
+            something people can depend on every day.
+          </p>
+          <p className="mt-6">
+            I explain things in plain language, test everything before it
+            goes live, and stay around after launch. I work with businesses in
+            Nigeria, across Africa and around the world, in person or
+            remotely.
+          </p>
 
-      <div className={`${text} pb-8`}>
-        <h3 className="font-[600]"><span aria-hidden="true">✅</span> What I Can Do For You</h3>
-        <ul>
-          <li>- Build a website that looks professional and brings you customers</li>
-          <li>- Build an online store so you can sell and get paid online</li>
-          <li>- Turn paperwork and manual processes into simple software your team can use</li>
-          <li>- Add online payments that you and your customers can trust</li>
-          <li>- Fix, speed up or take over a website or app that isn&apos;t working well</li>
-          <li>- Keep everything running after launch, so you&apos;re never left stranded</li>
-        </ul>
-      </div>
-
-      <div className={`${text} pb-8`}>
-        <h3 className="font-[600]"><span aria-hidden="true">💬</span> Why Clients Work With Me</h3>
-        <ul>
-          <li>- Trusted to help run a live government platform used by 58,000+ people</li>
-          <li>- Experienced with systems that handle real money, so I&apos;m careful with yours</li>
-          <li>- I test everything before it goes live and always have a backup plan</li>
-          <li>- I explain things in plain language, with no tech talk</li>
-          <li>- I use modern AI tools to deliver faster without cutting corners</li>
-        </ul>
-      </div>
-
-      <div className={`${text} pb-8`}>
-        <h3 className="font-[600]"><span aria-hidden="true">💼</span> Tools I Work With</h3>
-        <p>React, Next.js, TypeScript, Node.js, NestJS, MongoDB and AWS.</p>
-      </div>
-
-      <p className={text}>
-        Have a problem you want solved or an idea you want built? I work with businesses in Nigeria, across Africa and around the world, in person or remotely. Tell me about it using the form below.
-      </p>
+          <h3 className="mt-10 text-[15px] font-[700] uppercase tracking-[0.12em] text-[#0B0C0E]">
+            Tools I work with
+          </h3>
+          <ul className="mt-4 flex flex-wrap gap-2">
+            {tools.map((t) => (
+              <li
+                key={t}
+                className="rounded-full border border-[#0B0C0E]/15 bg-white px-4 py-2 text-[15px] font-[500] text-[#0B0C0E]"
+              >
+                {t}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </section>
   );

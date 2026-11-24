@@ -3,9 +3,15 @@
 import React, { useRef, useEffect } from "react";
 import styles from "./../page.module.css";
 
-import Nav from "./Nav";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
+import { projects } from "../projects";
+
+const stats = [
+  { value: "58,000+", label: "people use a platform I help run" },
+  { value: "4+ years", label: "building for real businesses" },
+  { value: `${projects.length}`, label: "websites and apps shipped" },
+];
 
 const Header = () => {
   const firstText = useRef(null);
@@ -56,40 +62,54 @@ const Header = () => {
   }, []);
 
   return (
-    <header>
+    <header id="top">
       <div className={`${styles.main} flex flex-col`}>
-        <Nav />
-        <div className="flex flex-1 flex-col justify-center px-[20px] pb-[120px] md:pb-[200px] lg:px-[80px]">
+        <div className="flex flex-1 flex-col justify-center px-[20px] pt-[48px] pb-[140px] md:pb-[220px] lg:px-[80px]">
+          <p className="inline-flex w-fit items-center gap-2 rounded-full bg-[#F4F7FA]/70 px-4 py-2 text-[14px] font-[600] text-[#0B0C0E] mb-6">
+            <span aria-hidden="true" className="h-2 w-2 rounded-full bg-[#1F9D55]" />
+            Available for new projects
+          </p>
           {/* The name and the role share one h1 so the page's main heading
               answers both "Tolulope Olatunji" and role searches. */}
-          <h1 className="max-w-[900px]">
+          <h1 className="max-w-[960px]">
             <span className="block font-sans text-[#3C3D3E] text-[18px] md:text-[22px] font-[500] mb-4">
               Hi, I&apos;m Tolulope Olatunji <span aria-hidden="true">👋</span>
             </span>
-            <span className="block font-display text-[#0B0C0E] text-[44px] leading-[1.1] md:text-[76px] font-[700]">
+            <span className="block font-display text-[#0B0C0E] text-[42px] leading-[1.05] md:text-[76px] font-[700] tracking-[-0.02em]">
               Software Engineer &amp; Full-Stack Web Developer
             </span>
           </h1>
           <p className="text-[#3C3D3E] text-[18px] md:text-[22px] leading-[1.6] font-[400] mt-6 max-w-[640px]">
-            I&apos;m a web developer and digital transformation consultant
-            based in Nigeria, working with businesses across Africa and
-            around the world. I build websites and web apps people can depend
-            on, including a platform used by 58,000+ people.
+            I build websites and web apps that win customers, take payments
+            and run your business smoothly. Based in Nigeria, working with
+            clients across Africa and around the world.
           </p>
-          <div className="flex flex-row gap-4 mt-10">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
+            <a
+              href="#contact"
+              className="text-center bg-[#0B0C0E] text-[#F4F7FA] rounded-full px-8 py-4 text-[16px] md:text-[18px] font-[600] hover:bg-[#455CE9] transition-colors"
+            >
+              Start a project
+            </a>
             <a
               href="#portfolio"
-              className="bg-[#0B0C0E] text-[#F4F7FA] rounded-full px-8 py-4 text-[16px] md:text-[18px] font-[600] hover:opacity-80 transition-opacity"
+              className="text-center border border-[#0B0C0E] text-[#0B0C0E] rounded-full px-8 py-4 text-[16px] md:text-[18px] font-[600] hover:bg-[#0B0C0E] hover:text-[#F4F7FA] transition-colors"
             >
               See my work
             </a>
-            <a
-              href="#contact"
-              className="border border-[#0B0C0E] text-[#0B0C0E] rounded-full px-8 py-4 text-[16px] md:text-[18px] font-[600] hover:bg-[#0B0C0E] hover:text-[#F4F7FA] transition-colors"
-            >
-              Get in touch
-            </a>
           </div>
+          <ul className="mt-12 grid grid-cols-3 gap-4 md:gap-10 max-w-[760px] border-t border-[#0B0C0E]/15 pt-6">
+            {stats.map((s) => (
+              <li key={s.label}>
+                <p className="font-display text-[24px] md:text-[36px] font-[700] text-[#0B0C0E] leading-none">
+                  {s.value}
+                </p>
+                <p className="mt-2 text-[13px] md:text-[15px] leading-[1.4] text-[#3C3D3E]">
+                  {s.label}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
         <div className={styles.sliderContainer} aria-hidden="true">
           <div ref={slider} className={styles.slider}>

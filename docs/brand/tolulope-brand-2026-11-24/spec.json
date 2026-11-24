@@ -1,0 +1,50 @@
+{
+  "name": "Tolulope Olatunji logo",
+  "version": "1.0.0",
+  "date": "2026-11-24",
+  "grid": 64,
+  "stroke": 7,
+  "gap": 5,
+  "crossbar": {
+    "x": 10,
+    "y": 13,
+    "w": 44,
+    "h": 7
+  },
+  "stem": {
+    "x": 16,
+    "y": 13,
+    "w": 7,
+    "h": 38
+  },
+  "o": {
+    "cx": 41,
+    "cy": 38,
+    "outerDiameter": 26,
+    "innerDiameter": 12
+  },
+  "markBounds": {
+    "x": 10,
+    "y": 13,
+    "w": 44,
+    "h": 38
+  },
+  "lockup": {
+    "font": "Neue Montreal Bold (outlined)",
+    "fontSize": 36.364,
+    "capHeight": 26,
+    "textX": 64,
+    "baseline": 51,
+    "viewBox": "10 13 327 45"
+  },
+  "clearSpace": 10,
+  "minSize": {
+    "markPx": 16,
+    "lockupHeightPx": 24
+  },
+  "colours": {
+    "ink": "#0B0C0E",
+    "paper": "#F4F7FA",
+    "accent": "#455CE9"
+  }
+}
