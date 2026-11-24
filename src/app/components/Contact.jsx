@@ -162,6 +162,14 @@ const Contact = () => {
             {(status === "slow" || status === "failed") && (
               <div className="mt-3 flex flex-wrap gap-3">
                 <a
+                  href={AUTHOR.bookingUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/30 px-5 py-2 font-[600] text-white hover:bg-white hover:text-[#0B0C0E] transition-colors"
+                >
+                  Book a call
+                </a>
+                <a
                   href={whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"

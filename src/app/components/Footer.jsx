@@ -26,7 +26,16 @@ const Footer = () => {
             I&apos;ll reply with questions, first ideas and a clear next
             step.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+            <a
+              href={AUTHOR.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-[#455CE9] px-6 py-3 text-[16px] font-[600] text-white hover:bg-white hover:text-[#0B0C0E] transition-colors"
+            >
+              Book a free call
+              <span className="sr-only"> (opens Calendly in a new tab)</span>
+            </a>
             <a
               href={`${AUTHOR.whatsapp.url}?text=${encodeURIComponent("Hi Tolulope, I found your website and would like to talk about a project.")}`}
               target="_blank"

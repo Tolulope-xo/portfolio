@@ -29,6 +29,8 @@ export const AUTHOR = {
     e164: "+2348155007898",
     url: "https://wa.me/2348155007898",
   },
+  // Free discovery call booking page.
+  bookingUrl: "https://calendly.com/olatunjitolulope4",
   // Where Tolulope is based, and the wider market served.
   country: { name: "Nigeria", code: "NG" },
   areaServed: [
