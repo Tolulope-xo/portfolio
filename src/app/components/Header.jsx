@@ -6,6 +6,7 @@ import styles from "./../page.module.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import { projects } from "../projects";
+import { AUTHOR } from "../site";
 
 const stats = [
   { value: "58,000+", label: "people use a platform I help run" },
@@ -90,10 +91,13 @@ const Header = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
             <a
-              href="#contact"
+              href={AUTHOR.bookingUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-center bg-[#0B0C0E] text-[#F4F7FA] rounded-full px-8 py-4 text-[16px] md:text-[18px] font-[600] hover:bg-[#455CE9] transition-colors"
             >
-              Talk through your problem
+              Book a free call
+              <span className="sr-only"> (opens Calendly in a new tab)</span>
             </a>
             <a
               href="#portfolio"
@@ -102,6 +106,10 @@ const Header = () => {
               See my work
             </a>
           </div>
+          <p className="mt-4 text-[15px] text-[#3C3D3E]">
+            Free, no obligation. Talk me through the problem and leave with
+            clear next steps.
+          </p>
           <ul className="mt-12 grid grid-cols-3 gap-4 md:gap-10 max-w-[760px] border-t border-[#0B0C0E]/15 pt-6">
             {stats.map((s) => (
               <li key={s.label}>
