@@ -4,6 +4,8 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { Analytics } from "@vercel/analytics/react";
+import WhatsAppButton from "./components/WhatsAppButton";
 import { SITE_URL, SITE_NAME, AUTHOR } from "./site";
 import { projects } from "./projects";
 
@@ -129,6 +131,7 @@ const jsonLd = {
         addressCountry: AUTHOR.country.code,
       },
       workLocation: { "@type": "Country", name: AUTHOR.country.name },
+      telephone: AUTHOR.whatsapp.e164,
       sameAs: AUTHOR.sameAs,
       hasOccupation: AUTHOR.roles.map((role) => ({
         "@type": "Occupation",
@@ -230,6 +233,9 @@ export default function RootLayout({
        <Header />
        <main id="main">{children}</main>
        <Footer />
+       <WhatsAppButton />
+       {/* Vercel Web Analytics: enable it under Project → Analytics in the dashboard. */}
+       <Analytics />
 
       </body>
     </html>

@@ -1,6 +1,7 @@
 import React from "react";
 import Contact from "./Contact";
 import Logo from "./Logo";
+import { AUTHOR } from "../site";
 
 const socials = [
   { href: "https://www.linkedin.com/in/Tolulope-olatunji", label: "LinkedIn" },
@@ -25,6 +26,24 @@ const Footer = () => {
             I&apos;ll reply with questions, first ideas and a clear next
             step.
           </p>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={`${AUTHOR.whatsapp.url}?text=${encodeURIComponent("Hi Tolulope, I found your website and would like to talk about a project.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-[#25D366] px-6 py-3 text-[16px] font-[600] text-[#0B0C0E] hover:opacity-90 transition-opacity"
+            >
+              Chat on WhatsApp
+              <span className="sr-only">(opens in a new tab)</span>
+            </a>
+            <a
+              href={`tel:${AUTHOR.whatsapp.e164}`}
+              className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-[16px] font-[600] text-white hover:bg-white hover:text-[#0B0C0E] transition-colors"
+            >
+              {AUTHOR.whatsapp.display}
+            </a>
+          </div>
+          <p className="mt-4 text-[14px] text-[#8A96A3]">Or use the form. I usually reply within one working day.</p>
         </div>
         <Contact />
       </div>
