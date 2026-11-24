@@ -10,7 +10,7 @@ import { projects } from "../projects";
 const stats = [
   { value: "58,000+", label: "people use a platform I help run" },
   { value: "4+ years", label: "building for real businesses" },
-  { value: `${projects.length}`, label: "websites and apps shipped" },
+  { value: `${projects.length}`, label: "solutions and websites delivered" },
 ];
 
 const Header = () => {
@@ -76,20 +76,24 @@ const Header = () => {
               Hi, I&apos;m Tolulope Olatunji <span aria-hidden="true">👋</span>
             </span>
             <span className="block font-display text-[#0B0C0E] text-[42px] leading-[1.05] md:text-[76px] font-[700] tracking-[-0.02em]">
-              Software Engineer &amp; Full-Stack Web Developer
+              Digital Transformation Consultant
+            </span>
+            <span className="block font-display text-[#3C3D3E] text-[22px] md:text-[32px] leading-[1.2] font-[500] mt-3">
+              with a software engineering background
             </span>
           </h1>
           <p className="text-[#3C3D3E] text-[18px] md:text-[22px] leading-[1.6] font-[400] mt-6 max-w-[640px]">
-            I build websites and web apps that win customers, take payments
-            and run your business smoothly. Based in Nigeria, working with
-            clients across Africa and around the world.
+            I help businesses understand what&apos;s really slowing them
+            down, then design the processes and build the software that fix
+            it, made for how you actually work. Based in Nigeria, working
+            with clients across Africa and around the world.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10">
             <a
               href="#contact"
               className="text-center bg-[#0B0C0E] text-[#F4F7FA] rounded-full px-8 py-4 text-[16px] md:text-[18px] font-[600] hover:bg-[#455CE9] transition-colors"
             >
-              Start a project
+              Talk through your problem
             </a>
             <a
               href="#portfolio"
@@ -117,13 +121,13 @@ const Header = () => {
               ref={firstText}
               className="font-display text-[#F4F7FA] text-[80px] md:text-[170px] capitalize leading-none font-[700] text-left"
             >
-              Software Engineer -
+              Digital Transformation -
             </p>
             <p
               ref={secondText}
               className="font-display text-[#F4F7FA] text-[80px] md:text-[170px] capitalize leading-none font-[700] text-left"
             >
-              Web Developer - Digital Consultant -
+              Process Design - Software Engineering -
             </p>
           </div>
         </div>

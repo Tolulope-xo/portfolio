@@ -1,6 +1,6 @@
 # thetolulope.vercel.app
 
-Personal portfolio of **Tolulope Olatunji** — Full-Stack Developer & Digital Transformation Consultant.
+Personal portfolio of **Tolulope Olatunji** — Digital Transformation Consultant with a software engineering background.
 
 Live site: [thetolulope.vercel.app](https://thetolulope.vercel.app/)
 

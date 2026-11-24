@@ -1,42 +1,42 @@
 const services = [
   {
-    title: "Business websites",
-    body: "A professional site that explains what you do and turns visitors into enquiries.",
+    title: "Understand the problem",
+    body: "We map how work really happens today, who's involved and where time, money or customers are being lost.",
   },
   {
-    title: "Online stores",
-    body: "Sell online with product pages, cart, checkout and payments your customers trust.",
+    title: "Design the process",
+    body: "A simpler, clearer way of working that fits your team, your customers and your budget, before any code is written.",
   },
   {
-    title: "Custom web apps",
-    body: "Turn paperwork and manual processes into simple software your team can use.",
+    title: "Build the solution",
+    body: "Custom web apps, websites, online stores and payments, built by me so what's recommended is what gets delivered.",
   },
   {
-    title: "Payments",
-    body: "Online payments wired in carefully, from people who build systems that handle real money.",
+    title: "Automate the busywork",
+    body: "Replace paperwork, spreadsheets and copy-paste with tools that connect and do the repetitive work for you.",
   },
   {
-    title: "Rescue & speed-up",
-    body: "Fix, speed up or take over a website or app that isn't working the way it should.",
+    title: "Help your team adopt it",
+    body: "Plain-language guides and hands-on support so people actually use the new way of working.",
   },
   {
-    title: "Care after launch",
-    body: "Hosting, updates and monitoring, so you're never left stranded once you go live.",
+    title: "Measure and improve",
+    body: "Monitoring, support and regular check-ins after launch, so the solution keeps up as your business changes.",
   },
 ];
 
 const steps = [
-  { title: "Talk", body: "You tell me the problem. I ask questions until I understand the goal, not just the feature list." },
-  { title: "Plan", body: "A clear scope, price and timeline in plain language, with no tech talk." },
-  { title: "Build", body: "Regular previews you can click through, so there are no surprises at the end." },
-  { title: "Launch & support", body: "Tested before it goes live, with a backup plan, and support afterwards." },
+  { title: "Listen", body: "You describe the problem in your own words. I ask questions until I understand the goal, not just the symptoms." },
+  { title: "Map & recommend", body: "A clear picture of the current process, what to change and why, with scope, price and timeline in plain language." },
+  { title: "Build & test", body: "Working previews you can click through early, tested with the people who'll use it." },
+  { title: "Launch & improve", body: "Go live with a backup plan, train your team, then keep refining based on real use." },
 ];
 
 const reasons = [
+  "I start with your problem, not with a technology",
+  "Engineering background, so recommendations are practical and I can build them myself",
   "Trusted to help run a live government platform used by 58,000+ people",
   "Experienced with systems that handle real money, so I'm careful with yours",
-  "Everything is tested before it goes live",
-  "Modern AI tools to deliver faster, without cutting corners",
 ];
 
 export default function Services() {
@@ -48,17 +48,18 @@ export default function Services() {
     >
       <div className="max-w-[720px]">
         <p className="text-[14px] font-[700] uppercase tracking-[0.14em] text-[#455CE9]">
-          Services
+          How I help
         </p>
         <h2
           id="services-heading"
           className="mt-3 font-display text-[#0B0C0E] text-[36px] md:text-[52px] leading-[1.1] font-[700] tracking-[-0.02em]"
         >
-          What I can build for you
+          From problem to a solution that works
         </h2>
         <p className="mt-5 text-[18px] md:text-[20px] leading-[1.6] text-[#3C3D3E]">
-          From a first website to the software that runs your operations, I
-          take it from idea to launch and keep it running.
+          Most problems aren&apos;t really technology problems. I help you
+          see what&apos;s actually going wrong, design a better way of
+          working, then build the tools that make it stick.
         </p>
       </div>
 
@@ -87,10 +88,10 @@ export default function Services() {
       <div className="mt-[96px] grid gap-12 lg:grid-cols-[1fr_1.4fr]">
         <div>
           <p className="text-[14px] font-[700] uppercase tracking-[0.14em] text-[#455CE9]">
-            How we&apos;ll work
+            How we&apos;ll work together
           </p>
           <h3 className="mt-3 font-display text-[#0B0C0E] text-[30px] md:text-[40px] leading-[1.15] font-[700] tracking-[-0.02em]">
-            A simple process, start to finish
+            Understand first, then build
           </h3>
           <ul className="mt-8 space-y-3">
             {reasons.map((r) => (

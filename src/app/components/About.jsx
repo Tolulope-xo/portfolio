@@ -23,27 +23,29 @@ const About = () => {
           <div className="mt-10 hidden lg:flex items-center gap-5 rounded-[24px] bg-[#0B0C0E] p-8">
             <LogoMark tone="paper" className="h-14 w-auto" />
             <p className="font-display text-[20px] leading-[1.35] text-[#F4F7FA]">
-              Software that people can depend on, every day.
+              Understand the problem. Fix the process. Build what lasts.
             </p>
           </div>
         </div>
 
         <div className="text-[18px] md:text-[20px] leading-[1.7] text-[#3C3D3E]">
           <p className="font-display text-[22px] md:text-[28px] leading-[1.4] font-[500] text-[#0B0C0E]">
-            I build websites and web apps that help businesses win customers,
-            get paid online and run smoothly.
+            I help organisations understand their problems and build the
+            processes and software that solve them.
           </p>
           <p className="mt-6">
-            I&apos;m a software engineer and web developer based in Nigeria.
-            For over 4 years I&apos;ve built websites and software for
-            businesses and organisations. Today I help run a national
+            I&apos;m a digital transformation consultant based in Nigeria,
+            with a software engineering background. For over 4 years
+            I&apos;ve helped businesses and organisations move manual,
+            paper-based and messy work online. Today I help run a national
             government platform that more than 58,000 professionals use to
-            register and pay online, so I know what it takes to build
-            something people can depend on every day.
+            register and pay online, so I know what it takes to change how
+            an organisation works, not just ship an app.
           </p>
           <p className="mt-6">
-            I explain things in plain language, test everything before it
-            goes live, and stay around after launch. I work with businesses in
+            Because I can also build, my advice stays practical: what I
+            recommend is what gets delivered, tested and supported. I explain
+            things in plain language and stay around after launch. I work with businesses in
             Nigeria, across Africa and around the world, in person or
             remotely.
           </p>

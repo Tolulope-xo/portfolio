@@ -117,7 +117,7 @@ const Contact = ({}) => {
               onChange={handleInputChange}
               id="message"
               name="message"
-              placeholder="What do you want to build?"
+              placeholder="What problem are you trying to solve?"
               required
               className="bg-transparent border-b outline-none border-b-[#FFFFFF]/40 placeholder:text-[#5A646E] placeholder:font-[400] text-[#FFFFFF] h-[140px] pt-3 resize-y focus:border-b-[#455CE9] transition-colors text-[18px] leading-[37.8px] font-[600] max-w-[100%] w-[100%]"
             />

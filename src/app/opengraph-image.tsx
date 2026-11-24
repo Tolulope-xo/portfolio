@@ -66,7 +66,7 @@ export default async function Image() {
             maxWidth: 1000,
           }}
         >
-          Software Engineer, Full-Stack Web Developer &amp; Digital Consultant
+          Digital Transformation Consultant with a Software Engineering background
         </div>
         <div
           style={{
