@@ -1,8 +1,10 @@
 // Single source of truth for the site's canonical URL and identity,
 // shared by metadata, robots.txt, sitemap.xml and JSON-LD.
 // Set NEXT_PUBLIC_SITE_URL in the deployment environment to override.
-export const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://thetolulope.vercel.app";
+// Trailing slashes are stripped so `${SITE_URL}/#person` never becomes "//#person".
+export const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://thetolulope.vercel.app"
+).replace(/\/+$/, "");
 
 export const SITE_NAME = "Tolulope Olatunji";
 
@@ -20,7 +22,7 @@ export const AUTHOR = {
     "Digital Transformation Consultant",
   ],
   description:
-    "Tolulope Olatunji is a software engineer, web developer and digital consultant in Nigeria who builds websites and web apps that help businesses grow.",
+    "Tolulope Olatunji is a software engineer and full-stack web developer in Nigeria who builds websites and web apps (React, Next.js, NestJS, AWS) that help businesses grow.",
   // Where Tolulope is based, and the wider market served.
   country: { name: "Nigeria", code: "NG" },
   areaServed: [
