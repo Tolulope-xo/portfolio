@@ -5,17 +5,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { AUTHOR } from "../site";
 
-// FormSubmit is slow (40s+ responses seen on 2026-11-24) and answers HTTP 200
-// even when it rejects a message, so: check its `success` field, tell the
-// visitor when it's slow, and give up after HARD_TIMEOUT_MS with direct
-// contact options instead of spinning forever.
-const ENDPOINT = "https://formsubmit.co/ajax/olatunjitolulope4@gmail.com";
-const SLOW_AFTER_MS = 10000;
-const HARD_TIMEOUT_MS = 60000;
-const EMAIL = "olatunjitolulope4@gmail.com";
+// Submissions go to our own /api/contact route, which emails them via Resend
+// (the recipient address stays on the server). If it's slow or fails, the
+// visitor is offered WhatsApp / booking / LinkedIn instead of a spinner.
+const ENDPOINT = "/api/contact";
+const SLOW_AFTER_MS = 8000;
+const HARD_TIMEOUT_MS = 25000;
 const LINKEDIN = "https://www.linkedin.com/in/Tolulope-olatunji";
 
-const emptyForm = { name: "", email: "", phone: "", message: "" };
+const emptyForm = { name: "", email: "", phone: "", message: "", company: "" };
 
 const Contact = () => {
   const [formData, setFormData] = useState(emptyForm);
@@ -40,16 +38,11 @@ const Contact = () => {
       const response = await fetch(ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          ...formData,
-          _subject: `Portfolio enquiry from ${formData.name}`,
-          _template: "table",
-        }),
+        body: JSON.stringify(formData),
         signal: controller.signal,
       });
       const data = await response.json().catch(() => ({}));
-      const ok = response.ok && String(data.success) === "true";
-      if (!ok) throw new Error(data.message || `HTTP ${response.status}`);
+      if (!response.ok || data.ok !== true) throw new Error(data.error || `HTTP ${response.status}`);
 
       setStatus("sent");
       setFormData(emptyForm);
@@ -57,16 +50,13 @@ const Contact = () => {
     } catch (error) {
       console.error("Contact form failed:", error);
       setStatus("failed");
-      toast.error("Sorry, your message didn't go through. Please message me on WhatsApp or by email.");
+      toast.error("Sorry, your message didn't go through. Please message me on WhatsApp or book a call.");
     } finally {
       clearTimeout(slowTimer);
       clearTimeout(hardTimer);
     }
   };
 
-  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
-    `Portfolio enquiry from ${formData.name || "your website"}`
-  )}&body=${encodeURIComponent(formData.message)}`;
   const whatsapp = `${AUTHOR.whatsapp.url}?text=${encodeURIComponent(
     formData.message || "Hi Tolulope, I found your website and would like to talk about a project."
   )}`;
@@ -75,6 +65,19 @@ const Contact = () => {
     <div id="contact" className="flex flex-col w-full">
       <div>
         <form onSubmit={handleSubmit}>
+          {/* Honeypot for bots: hidden from people and assistive tech. */}
+          <div aria-hidden="true" className="absolute left-[-9999px] h-0 w-0 overflow-hidden">
+            <label htmlFor="company">Company</label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={formData.company}
+              onChange={handleInputChange}
+            />
+          </div>
           <div className="">
             <div className="mb-[12px]">
               <label htmlFor="name" className="block text-[13px] font-[600] uppercase tracking-[0.12em] text-[#8A96A3]">Name</label>
@@ -168,12 +171,6 @@ const Contact = () => {
                   className="rounded-full bg-[#25D366] px-5 py-2 font-[600] text-[#0B0C0E] hover:opacity-90 transition-opacity"
                 >
                   WhatsApp me
-                </a>
-                <a
-                  href={mailto}
-                  className="rounded-full border border-white/30 px-5 py-2 font-[600] text-white hover:bg-white hover:text-[#0B0C0E] transition-colors"
-                >
-                  Email me
                 </a>
                 <a
                   href={LINKEDIN}
