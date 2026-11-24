@@ -4,6 +4,7 @@ import { Inter, Space_Grotesk } from "next/font/google";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { SITE_URL, SITE_NAME, AUTHOR } from "./site";
+import { projects } from "./projects";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 
 
 const description = AUTHOR.description;
-const title = `${AUTHOR.name} | Software Engineer & Web Developer, ${AUTHOR.country.name}`;
+const title = `${AUTHOR.name} | Software Engineer & Full-Stack Web Developer in ${AUTHOR.country.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -32,9 +33,12 @@ export const metadata: Metadata = {
     "Software Engineer",
     "Web Developer",
     "Full-Stack Developer",
+    "Full-Stack Web Developer",
     "Digital Consultant",
     "Digital Transformation Consultant",
     "Software Engineer in Nigeria",
+    "Software Engineer Nigeria",
+    "Full-Stack Web Developer in Nigeria",
     "Web Developer in Nigeria",
     "Web Developer in Africa",
     "React Developer",
@@ -165,7 +169,30 @@ const jsonLd = {
       isPartOf: { "@id": `${SITE_URL}/#website` },
       about: { "@id": `${SITE_URL}/#person` },
       mainEntity: { "@id": `${SITE_URL}/#person` },
+      primaryImageOfPage: `${SITE_URL}/opengraph-image`,
       inLanguage: "en",
+    },
+    {
+      // The "Recent Works" section, one CreativeWork per portfolio project.
+      "@type": "ItemList",
+      "@id": `${SITE_URL}/#projects`,
+      name: `Recent works by ${AUTHOR.name}`,
+      url: `${SITE_URL}/#portfolio`,
+      numberOfItems: projects.length,
+      itemListOrder: "https://schema.org/ItemListOrderAscending",
+      itemListElement: projects.map((project, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        item: {
+          "@type": "CreativeWork",
+          name: project.title,
+          description: `${project.post} by ${AUTHOR.name}`,
+          genre: project.post,
+          url: project.lin,
+          image: `${SITE_URL}${project.image}`,
+          creator: { "@id": `${SITE_URL}/#person` },
+        },
+      })),
     },
   ],
 };

@@ -30,12 +30,15 @@
 - [EMGS Global](https://www.emgs.global/): Website development
 - [Immibuddy](https://immibuddy.com/): Website development
 - [Skyle Design](https://designwithskyle.com/): Website development
+- [Alvany Energy Limited](https://starlit-fenglisu-2a5111.netlify.app/): Website development
 - [Planet Savers](https://planetsaversglobal.com/): Website development
 - [Jaga Visuals](https://jaga-visuals.netlify.app/): Website development
+- [Abel Partners](https://chic-taiyaki-c8c3c3.netlify.app/): Website development
 - [Sonani Consulting](https://sonani.netlify.app/): Website development
 
 ## Links
 
+- [Portfolio](https://thetolulope.vercel.app)
 - [GitHub](https://www.github.com/Tolulope-xo)
 - [LinkedIn](https://www.linkedin.com/in/Tolulope-olatunji)
 - [Twitter/X](https://www.twitter.com/Ayo__tomiwa)
