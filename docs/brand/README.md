@@ -40,7 +40,7 @@ Full numbers: [`spec.json`](tolulope-brand-2026-11-24/spec.json).
 ## Where it is used on the site
 
 - `src/app/components/Logo.jsx`: inline mark + live-text name (header, footer, About)
-- `src/app/icon.svg`: copy of `tolulope-mark-tile.svg`
+- `src/app/icon1.svg`: copy of `tolulope-mark-tile.svg` (named `icon1` so the URL changed from the old cached `/icon.svg`)
 - `src/app/apple-icon.png`: copy of `tolulope-mark-tile-180px.png`
 - `src/app/opengraph-image.tsx`: reversed mark on the share card
 
