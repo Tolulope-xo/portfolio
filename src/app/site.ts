@@ -23,6 +23,12 @@ export const AUTHOR = {
   ],
   description:
     "Tolulope Olatunji is a digital transformation consultant in Nigeria with a software engineering background, who helps businesses understand their problems and then designs the processes and builds the software that solve them.",
+  // WhatsApp, the preferred contact channel for most clients.
+  whatsapp: {
+    display: "+234 815 500 7898",
+    e164: "+2348155007898",
+    url: "https://wa.me/2348155007898",
+  },
   // Where Tolulope is based, and the wider market served.
   country: { name: "Nigeria", code: "NG" },
   areaServed: [

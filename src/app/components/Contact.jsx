@@ -1,66 +1,76 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { AUTHOR } from "../site";
 
-const Contact = ({}) => {
+// FormSubmit is slow (40s+ responses seen on 2026-11-24) and answers HTTP 200
+// even when it rejects a message, so: check its `success` field, tell the
+// visitor when it's slow, and give up after HARD_TIMEOUT_MS with direct
+// contact options instead of spinning forever.
+const ENDPOINT = "https://formsubmit.co/ajax/olatunjitolulope4@gmail.com";
+const SLOW_AFTER_MS = 10000;
+const HARD_TIMEOUT_MS = 60000;
+const EMAIL = "olatunjitolulope4@gmail.com";
+const LINKEDIN = "https://www.linkedin.com/in/Tolulope-olatunji";
 
-  
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
-  const [isLoading, setIsLoading] = useState(false);
+const emptyForm = { name: "", email: "", phone: "", message: "" };
+
+const Contact = () => {
+  const [formData, setFormData] = useState(emptyForm);
+  // idle | sending | slow | sent | failed
+  const [status, setStatus] = useState("idle");
+  const isLoading = status === "sending" || status === "slow";
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-  const handleSubmit = (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setStatus("sending");
 
-    setIsLoading(true);
+    const controller = new AbortController();
+    const slowTimer = setTimeout(() => setStatus("slow"), SLOW_AFTER_MS);
+    const hardTimer = setTimeout(() => controller.abort(), HARD_TIMEOUT_MS);
 
-    fetch("https://formsubmit.co/ajax/olatunjitolulope4@gmail.com", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then(() => {
-        // Display success toast notification
-        toast.success("Thanks! Your message is on its way. I'll reply soon.");
-        // Clear form data after successful submission
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
-      })
-      .catch((error) => {
-        console.error("Error during form submission:", error);
-        // Display error toast notification
-        toast.error("Failed to submit form. Please try again later.");
-      })
-      .finally(() => {
-        setIsLoading(false);
+    try {
+      const response = await fetch(ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          ...formData,
+          _subject: `Portfolio enquiry from ${formData.name}`,
+          _template: "table",
+        }),
+        signal: controller.signal,
       });
+      const data = await response.json().catch(() => ({}));
+      const ok = response.ok && String(data.success) === "true";
+      if (!ok) throw new Error(data.message || `HTTP ${response.status}`);
+
+      setStatus("sent");
+      setFormData(emptyForm);
+      toast.success("Thanks! Your message has been sent. I'll reply soon.");
+    } catch (error) {
+      console.error("Contact form failed:", error);
+      setStatus("failed");
+      toast.error("Sorry, your message didn't go through. Please message me on WhatsApp or by email.");
+    } finally {
+      clearTimeout(slowTimer);
+      clearTimeout(hardTimer);
+    }
   };
+
+  const mailto = `mailto:${EMAIL}?subject=${encodeURIComponent(
+    `Portfolio enquiry from ${formData.name || "your website"}`
+  )}&body=${encodeURIComponent(formData.message)}`;
+  const whatsapp = `${AUTHOR.whatsapp.url}?text=${encodeURIComponent(
+    formData.message || "Hi Tolulope, I found your website and would like to talk about a project."
+  )}`;
+
   return (
     <div id="contact" className="flex flex-col w-full">
       <div>
@@ -130,6 +140,52 @@ const Contact = ({}) => {
           >
             {isLoading ? "Sending..." : "Send message"}
           </button>
+
+          <div aria-live="polite" className="mt-5 text-[15px] leading-[1.6]">
+            {status === "slow" && (
+              <p className="text-[#C7D0D9]">
+                Still sending, the mail service is slow right now. You can
+                keep waiting, or reach me directly:
+              </p>
+            )}
+            {status === "failed" && (
+              <p className="text-[#FFB4B4]">
+                Your message didn&apos;t go through. Nothing you typed is lost,
+                send it to me directly:
+              </p>
+            )}
+            {status === "sent" && (
+              <p className="text-[#9BE7B8]">
+                Message sent. I usually reply within one working day.
+              </p>
+            )}
+            {(status === "slow" || status === "failed") && (
+              <div className="mt-3 flex flex-wrap gap-3">
+                <a
+                  href={whatsapp}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full bg-[#25D366] px-5 py-2 font-[600] text-[#0B0C0E] hover:opacity-90 transition-opacity"
+                >
+                  WhatsApp me
+                </a>
+                <a
+                  href={mailto}
+                  className="rounded-full border border-white/30 px-5 py-2 font-[600] text-white hover:bg-white hover:text-[#0B0C0E] transition-colors"
+                >
+                  Email me
+                </a>
+                <a
+                  href={LINKEDIN}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/30 px-5 py-2 font-[600] text-white hover:bg-white hover:text-[#0B0C0E] transition-colors"
+                >
+                  Message me on LinkedIn
+                </a>
+              </div>
+            )}
+          </div>
 
           <ToastContainer
             position="top-right"
