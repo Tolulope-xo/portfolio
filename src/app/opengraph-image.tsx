@@ -26,6 +26,24 @@ export default async function Image() {
           fontFamily: "NeueMontreal",
         }}
       >
+        {/* Logo mark, from docs/brand/.../tolulope-mark-reversed.svg */}
+        <svg
+          width="88"
+          height="76"
+          viewBox="10 13 44 38"
+          style={{ marginBottom: 40 }}
+        >
+          <rect x="10" y="13" width="44" height="7" fill="#F4F7FA" />
+          <rect x="16" y="13" width="7" height="38" fill="#F4F7FA" />
+          <circle
+            cx="41"
+            cy="38"
+            r="9.5"
+            fill="none"
+            stroke="#455CE9"
+            strokeWidth="7"
+          />
+        </svg>
         <div style={{ display: "flex", fontSize: 34, color: "#C7D0D9" }}>
           Hi, I&apos;m
         </div>

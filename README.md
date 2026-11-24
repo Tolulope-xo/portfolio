@@ -8,7 +8,8 @@ Live site: [thetolulope.vercel.app](https://thetolulope.vercel.app/)
 
 - [Next.js 14](https://nextjs.org/) (App Router) with React 18
 - [Tailwind CSS](https://tailwindcss.com/) with Inter + Space Grotesk via `next/font`
-- GSAP + Framer Motion for the marquee and project-preview animations
+- GSAP for the hero marquee
+- Logo package and brand rules in [`docs/brand/`](docs/brand/README.md)
 - Deployed on [Vercel](https://vercel.com/)
 
 ## Highlights

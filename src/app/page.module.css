@@ -1,6 +1,6 @@
 .main{
     position: relative;
-    height: 100vh;
+    min-height: calc(100svh - 72px);
     overflow: hidden;
     background-color: #C7D0D9;
   }

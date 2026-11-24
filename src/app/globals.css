@@ -2,3 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
+/* Keep anchor targets clear of the sticky 72px nav. */
+html {
+  scroll-padding-top: 72px;
+}
+
+::selection {
+  background: #455ce9;
+  color: #ffffff;
+}

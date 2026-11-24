@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter, Space_Grotesk } from "next/font/google";
+import Nav from "./components/Nav";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import { SITE_URL, SITE_NAME, AUTHOR } from "./site";
@@ -186,7 +187,7 @@ const jsonLd = {
         item: {
           "@type": "CreativeWork",
           name: project.title,
-          description: `${project.post} by ${AUTHOR.name}`,
+          description: `${project.post} by ${AUTHOR.name}: ${project.blurb}`,
           genre: project.post,
           url: project.lin,
           image: `${SITE_URL}${project.image}`,
@@ -212,10 +213,16 @@ export default function RootLayout({
          type="application/ld+json"
          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
        />
-       <Header/>
-
-        <main  >{children}</main>
-        <Footer/>
+       <a
+         href="#top"
+         className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-[#0B0C0E] focus:px-5 focus:py-3 focus:text-[#F4F7FA]"
+       >
+         Skip to content
+       </a>
+       <Nav />
+       <Header />
+       <main id="main">{children}</main>
+       <Footer />
 
       </body>
     </html>
