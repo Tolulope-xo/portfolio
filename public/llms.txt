@@ -1,6 +1,6 @@
-# Tolulope Olatunji — Software Engineer, Full-Stack Web Developer & Digital Transformation Consultant
+# Tolulope Olatunji — Digital Transformation Consultant & Software Engineer
 
-> Personal portfolio of Tolulope Olatunji (also written Olatunji Tolulope), a software engineer based in Nigeria and full-stack web developer (React, Next.js, NestJS, TypeScript, AWS) and digital transformation consultant with 4+ years of professional experience. Currently deputy technical authority on a national government regulatory platform serving 58,000+ registered professionals, shipping payment-critical backend logic, gated CI/CD releases, and live production incident response.
+> Personal portfolio of Tolulope Olatunji (also written Olatunji Tolulope), a digital transformation consultant based in Nigeria with a software engineering background (React, Next.js, NestJS, TypeScript, AWS) and 4+ years of professional experience. Helps businesses and organisations understand their problems, redesign their processes and build the software that supports them. Currently deputy technical authority on a national government regulatory platform serving 58,000+ registered professionals.
 
 ## Location
 
@@ -16,8 +16,9 @@
 
 ## Services
 
+- Digital transformation consulting: understanding the problem, mapping and redesigning business processes
+- Process automation and custom software that fits the way a team works
 - Full-stack web application development (React/Next.js + Node/NestJS)
-- Digital transformation for organisations moving critical workflows online
 - Payment integration and transaction-integrity engineering
 - Cloud deployment, CI/CD pipelines and release management on AWS
 - Production operations: monitoring, incident response and data remediation

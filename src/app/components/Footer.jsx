@@ -17,12 +17,13 @@ const Footer = () => {
             Contact
           </p>
           <h2 className="mt-3 font-display text-[#FFFFFF] text-[36px] md:text-[56px] leading-[1.1] font-[700] tracking-[-0.02em]">
-            Have something in mind?
-            <span className="block text-[#C7D0D9]">Let&apos;s build it together.</span>
+            Something not working the way it should?
+            <span className="block text-[#C7D0D9]">Let&apos;s figure it out together.</span>
           </h2>
           <p className="mt-6 max-w-[460px] text-[18px] leading-[1.6] text-[#C7D0D9]">
-            Tell me what you want to build or fix. I&apos;ll reply with
-            questions, ideas and a clear next step.
+            Describe the problem in your own words, no tech talk needed.
+            I&apos;ll reply with questions, first ideas and a clear next
+            step.
           </p>
         </div>
         <Contact />

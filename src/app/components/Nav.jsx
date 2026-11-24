@@ -60,7 +60,7 @@ const Nav = () => {
             href="#contact"
             className="bg-[#0B0C0E] text-[#F4F7FA] rounded-full px-6 py-3 text-[15px] font-[600] hover:bg-[#455CE9] transition-colors"
           >
-            Start a project
+            Let&apos;s talk
           </a>
         </div>
 
@@ -103,7 +103,7 @@ const Nav = () => {
           onClick={() => setOpen(false)}
           className="mt-2 block text-center bg-[#0B0C0E] text-[#F4F7FA] rounded-full px-6 py-4 text-[16px] font-[600]"
         >
-          Start a project
+          Let&apos;s talk
         </a>
       </div>
     </div>

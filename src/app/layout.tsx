@@ -21,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
 
 
 const description = AUTHOR.description;
-const title = `${AUTHOR.name} | Software Engineer & Full-Stack Web Developer in ${AUTHOR.country.name}`;
+const title = `${AUTHOR.name} | Digital Transformation Consultant & Software Engineer in ${AUTHOR.country.name}`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -31,12 +31,16 @@ export const metadata: Metadata = {
   keywords: [
     AUTHOR.name,
     ...AUTHOR.alternateNames,
+    "Digital Transformation Consultant",
+    "Digital Transformation Consultant in Nigeria",
+    "Digital Transformation Consultant in Africa",
+    "Business Process Improvement",
+    "Process Automation Consultant",
     "Software Engineer",
     "Web Developer",
     "Full-Stack Developer",
     "Full-Stack Web Developer",
     "Digital Consultant",
-    "Digital Transformation Consultant",
     "Software Engineer in Nigeria",
     "Software Engineer Nigeria",
     "Full-Stack Web Developer in Nigeria",
@@ -95,11 +99,12 @@ export const metadata: Metadata = {
 };
 
 const services = [
+  "Digital transformation consulting",
+  "Business process mapping and redesign",
+  "Process automation and custom software",
   "Full-stack web application development",
   "Website development",
-  "Digital transformation consulting",
   "Payment integration",
-  "Cloud deployment and CI/CD on AWS",
 ];
 
 // Structured data so search engines and AI assistants (Google AI Overviews,
@@ -135,6 +140,9 @@ const jsonLd = {
         areaServed: AUTHOR.areaServed,
       })),
       knowsAbout: [
+        "Digital transformation",
+        "Business process improvement",
+        "Process automation",
         "Software engineering",
         "Web development",
         "Full-stack development",
@@ -146,7 +154,6 @@ const jsonLd = {
         "MongoDB",
         "AWS",
         "CI/CD",
-        "Digital transformation",
         "Payment integration",
         "AI-augmented software development",
       ],

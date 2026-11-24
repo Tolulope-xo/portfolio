@@ -14,15 +14,15 @@ export const AUTHOR = {
   familyName: "Olatunji",
   // Other ways people search for the same person.
   alternateNames: ["Olatunji Tolulope"],
-  jobTitle: "Software Engineer & Full-Stack Web Developer",
+  jobTitle: "Digital Transformation Consultant & Software Engineer",
   // The roles this site should be found for, in priority order.
   roles: [
+    "Digital Transformation Consultant",
     "Software Engineer",
     "Full-Stack Web Developer",
-    "Digital Transformation Consultant",
   ],
   description:
-    "Tolulope Olatunji is a software engineer and full-stack web developer in Nigeria who builds websites and web apps (React, Next.js, NestJS, AWS) that help businesses grow.",
+    "Tolulope Olatunji is a digital transformation consultant in Nigeria with a software engineering background, who helps businesses understand their problems and then designs the processes and builds the software that solve them.",
   // Where Tolulope is based, and the wider market served.
   country: { name: "Nigeria", code: "NG" },
   areaServed: [
